@@ -66,7 +66,7 @@ function BirdStep() {
 		return;
 	var og = cPos.h * 2;
 	var oh = og + Math.floor(Math.random() * (mh-og+1));
-	var obs = $("<img/><img/>").addClass('c obs').css({left:480, zIndex:3}).css(dimPipe).attr('src', 'vine.png')
+	var obs = $("<img/><img/>").addClass('c obs').css({left:480, zIndex:3,userSelect: 'none'}).css(dimPipe).attr('src', 'vine.png')
 		.appendTo(board).animate({left:-50}, Math.max(2000,3500-noClr*50), 'linear', function() { 
 			$('#score').text(' Score: ' + (score += 1 + Math.floor(++noClr/10)));
 			this.remove();
@@ -103,14 +103,14 @@ $(document).ready(function() {
 
 </script>
 </head>
-<body style='margin:0 0; background-color:#459ef1'>
-<div id='board' style='position:absolute; left:0%; top:0%; width:956px; height:300px; overflow:hidden;'>
+<body style='margin:0 0; background-color:#ffffff'>
+<div id='board' style='position:absolute; left:0%; top:0%; width:956px; height:600px; overflow:hidden;'>
 	<div id='score' style='position:absolute; left:100px; top:0px; height:25px; 
 		z-index:5; color:red; font-weight:900'></div>
-	<img class="c" id='bird' src="b2.gif" style="z-index:5"/>
-	<img id='instr' src='instr.png' class='c' style="left:205px; top:75px; z-index:100" />
-	<div class="bg" id='bGrnd' style="top:-20px; height:320px; background-image:url(bg1.png) "/>
-	<div class="bg" id='fGrnd' style="top:235px; height:85px; z-index:4; background-image:url(bg2.png) "/>
+	<img class="c" id='bird' src="b2.gif" unselectable="on" style="z-index:5"/>
+	<img id='instr' src='instr.png' unselectable="on" class='c' style="left:205px; top:75px; z-index:100" />
+	<div class="bg" id='bGrnd' style="top:-20px; height:620px; background-image:url(bg1.png) "/>
+	<div class="bg" id='fGrnd' style="top:535px; height:85px; z-index:4; background-image:url(bg2.png) "/>
 </div>
 </body>
 </html>
